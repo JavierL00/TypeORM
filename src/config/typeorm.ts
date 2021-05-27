@@ -1,9 +1,9 @@
-import {createConnection} from 'typeorm'
+import { createConnection } from 'typeorm'
 import path from 'path'
 
 export async function connect() {
   await createConnection({
-    type:"mysql",
+    type: "mysql",
     host: "localhost",
     port: 3306,
     username: "root",

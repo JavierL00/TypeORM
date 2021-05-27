@@ -1,25 +1,25 @@
 import {
-    Resolver,
-    Mutation,
-    Arg,
-    Int,
-    Query,
-    InputType,
-    Field
+  Resolver,
+  Mutation,
+  Arg,
+  Int,
+  Query,
+  InputType,
+  Field
 } from "type-graphql";
 import { Destination } from "../entity/Destination";
 import { Ticket } from "../entity/Ticket";
 
 @InputType()
 class TicketInput {
-    @Field(() => Int)
-    destination!: Destination;
+  @Field(() => Int)
+  destination!: Destination;
 
-    @Field(() => Int)
-    price!: number;
+  @Field(() => Int)
+  price!: number;
 
-    @Field(() => Int)
-    duration!: number;
+  @Field(() => Int)
+  duration!: number;
 }
 
 @InputType()
