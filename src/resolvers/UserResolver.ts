@@ -26,16 +26,16 @@ class UserInput {
 
 @InputType()
 class UserUpdateInput {
-  @Field(() => String, {nullable: true})
+  @Field(() => String, { nullable: true })
   name?: string;
 
-  @Field(() => String, {nullable: true})
+  @Field(() => String, { nullable: true })
   surname?: string;
 
-  @Field(() => String, {nullable: true})
+  @Field(() => String, { nullable: true })
   gender?: string;
 
-  @Field(() => Int, {nullable: true})
+  @Field(() => Int, { nullable: true })
   age?: number;
 }
 
