@@ -3,9 +3,12 @@ import {
   PrimaryGeneratedColumn,
   Column,
   BaseEntity,
-  CreateDateColumn
+  CreateDateColumn,
+  OneToMany
 } from "typeorm";
 import { Field, Int, ObjectType } from "type-graphql";
+
+import { Sale } from "./Sale";
 
 @ObjectType()
 @Entity()
@@ -33,4 +36,7 @@ export class User extends BaseEntity {
   @Field(() => String)
   @CreateDateColumn({ type: "timestamp" })
   createdAt!: string;
+
+  @OneToMany(type => Sale, sale => sale.user)
+  sale!: Sale[];
 }

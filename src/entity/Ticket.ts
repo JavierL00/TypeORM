@@ -4,11 +4,13 @@ import {
     Column,
     BaseEntity,
     CreateDateColumn,
-    ManyToOne
+    ManyToOne,
+    OneToMany
 } from "typeorm";
 import { Field, Int, ObjectType } from "type-graphql";
 
-import { Destination } from "../entity/Destination";
+import { Destination } from "./Destination";
+import { Sale } from "./Sale";
 
 @ObjectType()
 @Entity()
@@ -32,4 +34,7 @@ export class Ticket extends BaseEntity {
     @Field(() => String)
     @CreateDateColumn({ type: "timestamp" })
     createdAt!: string;
+
+    @OneToMany(type => Sale, sale => sale.user)
+    sale!: Sale[];
 }

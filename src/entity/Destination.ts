@@ -8,7 +8,7 @@ import {
 } from "typeorm";
 import { Field, Int, ObjectType } from "type-graphql";
 
-import { Ticket } from "../entity/Ticket";
+import { Ticket } from "./Ticket";
 
 @ObjectType()
 @Entity()
